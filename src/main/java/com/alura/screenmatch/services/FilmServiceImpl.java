@@ -38,5 +38,20 @@ public class FilmServiceImpl implements FilmService {
         }else{
             return false;
         }
-    };
+    }
+
+    public Boolean deleteFilm(Long id) {
+        Optional<Film> movie = repository.findById(id);
+
+        if(movie.isPresent()){
+            repository.deleteById(id);
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    ;
+
+
 }

@@ -11,4 +11,6 @@ public interface FilmService {
     public List<Film> returnFilms();
 
     public Boolean editFilm(Film film, Long id);
+
+    public Boolean deleteFilm(Long id);
 }

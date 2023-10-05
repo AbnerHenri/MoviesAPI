@@ -29,10 +29,18 @@ public class FilmController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Film> editFilms(@PathVariable Long id, @RequestBody Film film){
+    public ResponseEntity<String> editFilms(@PathVariable Long id, @RequestBody Film film){
         Boolean verify = service.editFilm(film, id);
         return verify ?
-                ResponseEntity.status(200).body(film) :
+                ResponseEntity.status(200).body("Filme editado") :
+                ResponseEntity.status(400).build();
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteFilm(@PathVariable Long id){
+        Boolean verify = service.deleteFilm(id);
+        return verify ?
+                ResponseEntity.status(200).body("Filme deletado") :
                 ResponseEntity.status(400).build();
     }
 }
