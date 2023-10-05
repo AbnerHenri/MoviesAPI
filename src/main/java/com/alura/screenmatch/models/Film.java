@@ -15,6 +15,15 @@ public class Film {
     private Integer duration;
     private String genus;
 
+    public Film(Long id, String name, Integer duration, String genus) {
+        this.id = id;
+        this.name = name;
+        this.duration = duration;
+        this.genus = genus;
+    }
+
+    public Film() { }
+
     public Long getId() {
         return id;
     }
