@@ -9,4 +9,6 @@ public interface FilmService {
     public void addFilm(Film film);
 
     public List<Film> returnFilms();
+
+    public Boolean editFilm(Film film, Long id);
 }

@@ -27,4 +27,12 @@ public class FilmController {
         service.addFilm(film);
         return ResponseEntity.status(200).body(film);
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Film> editFilms(@PathVariable Long id, @RequestBody Film film){
+        Boolean verify = service.editFilm(film, id);
+        return verify ?
+                ResponseEntity.status(200).body(film) :
+                ResponseEntity.status(400).build();
+    }
 }
